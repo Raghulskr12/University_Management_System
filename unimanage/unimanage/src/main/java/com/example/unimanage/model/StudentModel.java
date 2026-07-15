@@ -1,6 +1,9 @@
 package com.example.unimanage.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +19,11 @@ public class StudentModel {
     private Integer id;
     private String name;
     private String email;
+
+    @Size(min = 10, max = 10)
     private Integer phoneNumber;
+
+    @Min(17)
+    @Max(35)
     private Integer age;
 }
