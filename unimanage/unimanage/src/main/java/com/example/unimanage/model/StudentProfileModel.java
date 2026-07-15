@@ -8,10 +8,10 @@ import lombok.Data;
 
 @Entity
 @Data
-public class InstructorModel {
+public class StudentProfileModel {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
-    private String name;
-    private String email;
+    private Integer marks;
+    private String address;
 }

@@ -10,8 +10,8 @@ import lombok.Data;
 @Entity
 public class CourseModel {
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
     private String name;
     private Integer credits;
     private String semester;
