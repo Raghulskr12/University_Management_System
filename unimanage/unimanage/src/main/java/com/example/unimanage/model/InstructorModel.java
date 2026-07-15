@@ -1,6 +1,7 @@
 package com.example.unimanage.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -20,5 +21,6 @@ public class InstructorModel {
     @NotBlank(message = "Name is required")
     @Size(min = 3, max = 30)
     private String name;
+    @Email(message = "Invalid email")
     private String email;
 }

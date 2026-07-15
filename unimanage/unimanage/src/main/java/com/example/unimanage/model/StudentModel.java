@@ -1,6 +1,7 @@
 package com.example.unimanage.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
@@ -18,6 +19,8 @@ public class StudentModel {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String name;
+
+    @Email(message = "Invalid email")
     private String email;
 
     @Size(min = 10, max = 10)
