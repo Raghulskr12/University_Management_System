@@ -3,5 +3,5 @@ package com.example.unimanage.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DepartmentService {
+public class StudentProfileService {
 }
