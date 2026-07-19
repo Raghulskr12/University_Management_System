@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @Table(name = "studentsProfile")
@@ -24,5 +26,6 @@ public class StudentProfileModel {
     private String address;
 
     @OneToOne(mappedBy = "studentProfile")
+    @JsonIgnore
     private StudentModel student;
 }

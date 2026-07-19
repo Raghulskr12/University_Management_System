@@ -31,7 +31,6 @@ public class InstructorService {
         InstructorModel instructor = getInstructorById(id);
         instructor.setName(instructorDetails.getName());
         instructor.setEmail(instructorDetails.getEmail());
-        // Managing relationships can be added here
         return instructorRepository.save(instructor);
     }
 

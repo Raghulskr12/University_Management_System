@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import com.example.unimanage.model.CourseModel;
+import com.example.unimanage.model.StudentModel;
 
 @RestController
 @RequestMapping("/api/departments")
@@ -41,5 +43,15 @@ public class DepartmentController {
     public ResponseEntity<Void> deleteDepartment(@PathVariable Integer id) {
         departmentService.deleteDepartment(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/{id}/students")
+    public ResponseEntity<List<StudentModel>> getDepartmentStudents(@PathVariable Integer id) {
+        return ResponseEntity.ok(departmentService.getDepartmentStudents(id));
+    }
+
+    @GetMapping("/{id}/courses")
+    public ResponseEntity<List<CourseModel>> getDepartmentCourses(@PathVariable Integer id) {
+        return ResponseEntity.ok(departmentService.getDepartmentCourses(id));
     }
 }

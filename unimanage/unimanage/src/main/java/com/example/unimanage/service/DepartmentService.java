@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import com.example.unimanage.model.CourseModel;
+import com.example.unimanage.model.StudentModel;
 
 @Service
 public class DepartmentService {
@@ -37,5 +39,15 @@ public class DepartmentService {
     public void deleteDepartment(Integer id) {
         DepartmentModel department = getDepartmentById(id);
         departmentRepository.delete(department);
+    }
+
+    public List<StudentModel> getDepartmentStudents(Integer id) {
+        DepartmentModel department = getDepartmentById(id);
+        return department.getStudents();
+    }
+
+    public List<CourseModel> getDepartmentCourses(Integer id) {
+        DepartmentModel department = getDepartmentById(id);
+        return department.getCourses();
     }
 }
